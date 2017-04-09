@@ -24,15 +24,17 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView iv;
 
-    private String url = "http://weibo.com/cnwutianhao";
+//    private String url = "http://weibo.com/cnwutianhao";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String str_url = getIntent().getExtras().getString("url");
+
         iv = (ImageView) findViewById(R.id.iv_qrcode);
 
-        QRCodeUtil.showThreadImage(this, url, iv, R.mipmap.ic_launcher);
+        QRCodeUtil.showThreadImage(this, str_url, iv, R.mipmap.ic_launcher);
     }
 }
